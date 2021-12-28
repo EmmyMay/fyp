@@ -1,8 +1,10 @@
-require('dotenv').config();
-const express = require("express");
+import dotenv from 'dotenv'
+dotenv.config();
+import express from 'express'
 const app = express();
-import fyp from './router';
-const DB_CONNECTION = require('../database/db_connect')
+import fyp from './router/index.mjs';
+import DB_CONNECTION from '../database/db_connect.js'
+
 
 
 DB_CONNECTION.connection.once('open', function () {
@@ -14,4 +16,4 @@ app.use((req, res, next) => {
     error: "Not Found",
   });
 });
-module.exports = app;
+export default app;
