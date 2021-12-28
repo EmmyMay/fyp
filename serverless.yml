@@ -1,0 +1,23 @@
+org: emmyb
+app: fyp
+service: fyp
+frameworkVersion: '2 || 3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: '20201221'
+  memorySize: 1028
+  timeout: 10
+  stage: dev
+  region: us-east-1
+  
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: '*'
+        
+
+plugins:
+- serverless-offline
