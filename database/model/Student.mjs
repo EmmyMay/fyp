@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 const StudentSchema = new Schema({
-    user: {
+    
     firstName: { type: String, required: true, validate: Validator.NameValidator },
     lastName: { type: String, required: true, validate: Validator.NameValidator },
     middleName: { type: String, required: true, validate: Validator.NameValidator },
@@ -18,7 +18,7 @@ const StudentSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Projects'
     }
-  },
+ 
 })
 
 const Students = mongoose.model('Students', StudentSchema)
