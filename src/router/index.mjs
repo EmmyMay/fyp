@@ -12,19 +12,8 @@ router.get('/', (req, res) => (
 
 
 
-router.post('/save', async (req, res) => {
-  try {
-    let saveProject = await Controller.saveProjectMetaData();
-     res.status(201).json({
-       message: "Project Successfully Saved"
-     })
-  } catch (error) {
-    res.status(401).json({
-      message: "unable to save project"
-    })
-  } 
-  
-})
+router.post('/save', Controller.saveProjectMetaData)
 
+router.get('/projectbytitle', Controller.getProject)
 
 export default router;

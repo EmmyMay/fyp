@@ -6,13 +6,9 @@ export  function NameValidator (maxlen = 50, val) {
       validator: 'isLength',
       arguments: [2, maxlen],
       message: 'Name should be between {ARGS[0]} and {ARGS[1]} characters'
-    }),
+    })  
 
-    validator({
-      validator: 'isAlphanumeric',
-      passIfEmpty: true,
-      message: 'Name should contain alpha-numeric characters only',
-    })
+   
   ]
 
 }
