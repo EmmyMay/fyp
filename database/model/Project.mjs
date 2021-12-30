@@ -8,14 +8,14 @@ const ProjectSchema = new Schema({
     ref: 'Students'
     },
     title: { type: String, required: true, validate: Validator.NameValidator(200) },
-    submmittedOn: { type: String, required: true },
+    submittedOn: { type: String, required: true },
     uploadedBy: { type: Date },
     supervisedBy: {type: String, required: true, validate: Validator.NameValidator(100)},
     tags: { type: [String], required: true }
     // fileUrl: {type: String}
   
 })
-
+ProjectSchema.index({title: 'text'});
 const Projects = mongoose.model('Projects', ProjectSchema);
 
 export default Projects;
