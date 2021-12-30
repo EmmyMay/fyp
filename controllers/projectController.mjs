@@ -17,7 +17,7 @@ export const saveProjectMetaData = async (req, res) => {
     return;
   }
   console.log(checkForDuplicate);
-  if (!req ? .body ? .firstName || !req ? .body ? .title) {
+  if (!req .body?.firstName || !req?.body?.title) {
     return res.status(400).json({
       'message': 'User and Project Data required'
     });
@@ -80,14 +80,14 @@ export const getProject = async (req, res) => {
         $search: phrase
       }
     })
-    console.log(project);
-
-    res.status(200).json({
-      message: "Found Project!",
-      data: project
-    })
-
-
+    
+    
+      res.status(200).json({
+        message: "Found Project!",
+        data: project
+      })
+    
+    
   } catch (error) {
     res.status(400).json({
       message: "Project not found!"
